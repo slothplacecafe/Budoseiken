@@ -371,7 +371,7 @@
     }
 
     .banana-gallery .shot {
-      background: rgba(255,255,255,.04);
+      background: #ffffff;
       border: 1px solid rgba(255,255,255,.08);
       border-radius: 20px;
       padding: 18px;
@@ -415,11 +415,12 @@
     }
 
     .gear-card .gallery img,
-    .gear-card .placeholder {
+    .gear-card .placeholder,
+    .hover-swap {
       width: 100%;
       border-radius: 18px;
       border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
+      background: #ffffff;
     }
 
     .gear-card .placeholder {
@@ -430,6 +431,39 @@
       padding: 18px;
       color: var(--muted);
       line-height: 1.6;
+    }
+
+    .hover-swap {
+      position: relative;
+      min-height: 260px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+    }
+
+    .hover-swap img {
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      transition: opacity .28s ease, transform .32s ease;
+      filter: drop-shadow(0 16px 30px rgba(0,0,0,.18));
+    }
+
+    .hover-swap .swap-back {
+      position: absolute;
+      inset: 18px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .hover-swap:hover .swap-front {
+      opacity: 0;
+      transform: scale(.985);
+    }
+
+    .hover-swap:hover .swap-back {
+      opacity: 1;
     }
 
     .footer {
@@ -641,8 +675,10 @@
         <div class="gear-grid">
           <article class="card gear-card">
             <div class="gallery">
-              <img src="assets/Untitled design - 2 (6).jpg" alt="Budoseiken bag front">
-              <img src="assets/Untitled design - 1 (2).jpg" alt="Budoseiken bag angle">
+              <div class="hover-swap">
+                <img class="swap-front" src="assets/Untitled design - 2 (6).jpg" alt="Budoseiken bag front">
+                <img class="swap-back" src="assets/Untitled design - 1 (2).jpg" alt="Budoseiken bag angle">
+              </div>
             </div>
             <div class="product-body" style="padding:0;">
               <h3 class="tilt">Budoseiken Bag</h3>
@@ -652,12 +688,14 @@
 
           <article class="card gear-card">
             <div class="gallery">
-              <img src="assets/Hat.png" alt="Budoseiken hat">
-              <img src="assets/Gloves.png" alt="Budoseiken gloves">
+              <div class="hover-swap">
+                <img class="swap-front" src="assets/Gloves.png" alt="Budoseiken gloves front">
+                <img class="swap-back" src="assets/glove2.png" alt="Budoseiken gloves alternate view">
+              </div>
             </div>
             <div class="product-body" style="padding:0;">
-              <h3 class="tilt">More Gear Coming</h3>
-              <p>Budoseiken accessories and future drops expanding beyond rashguards.</p>
+              <h3 class="tilt">Budoseiken Gloves</h3>
+              <p>Clean fight gear details with a second hover view for the gloves.</p>
             </div>
           </article>
         </div>
