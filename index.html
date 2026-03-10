@@ -282,33 +282,55 @@
       min-height: 320px;
       display: grid;
       place-items: center;
+      overflow: hidden;
       background:
-        radial-gradient(circle at top, rgba(255,255,255,.03), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,.01), rgba(0,0,0,.02));
+        radial-gradient(circle at top, rgba(255,255,255,.05), transparent 34%),
+        repeating-linear-gradient(
+          135deg,
+          rgba(255,255,255,.025) 0px,
+          rgba(255,255,255,.025) 2px,
+          rgba(255,255,255,.01) 2px,
+          rgba(255,255,255,.01) 8px
+        ),
+        linear-gradient(180deg, rgba(150,160,170,.08), rgba(70,78,84,.06));
     }
 
     .product-image img {
-      width: 100%;
-      max-height: 340px;
-      object-fit: contain;
       transition: opacity .28s ease, transform .32s ease;
       filter: drop-shadow(0 16px 30px rgba(0,0,0,.32));
-    }
-      width: 100%;
-      max-height: 340px;
       object-fit: contain;
-      transition: opacity .28s ease, transform .32s ease;
+    }
+
+    .product-image .front,
+    .product-image .back {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: calc(100% - 36px);
+      max-height: 300px;
+      transform: translate(-50%, -50%);
+    }
+
+    .product-image .front {
+      opacity: 1;
+      z-index: 2;
     }
 
     .product-image .back {
-      position: absolute;
-      inset: 18px;
       opacity: 0;
+      z-index: 3;
       pointer-events: none;
     }
 
-    .product-card:hover .front { opacity: 0; transform: scale(.985); }
-    .product-card:hover .back { opacity: 1; }
+    .product-card:hover .front {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(.985);
+    }
+
+    .product-card:hover .back {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
 
     .product-body {
       padding: 18px 18px 20px;
