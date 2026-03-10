@@ -283,11 +283,17 @@
       display: grid;
       place-items: center;
       background:
-        radial-gradient(circle at top, rgba(255,255,255,.08), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.05));
+        radial-gradient(circle at top, rgba(255,255,255,.03), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,.01), rgba(0,0,0,.02));
     }
 
     .product-image img {
+      width: 100%;
+      max-height: 340px;
+      object-fit: contain;
+      transition: opacity .28s ease, transform .32s ease;
+      filter: drop-shadow(0 16px 30px rgba(0,0,0,.32));
+    }
       width: 100%;
       max-height: 340px;
       object-fit: contain;
@@ -309,6 +315,9 @@
     }
 
     .product-body h3 {
+      margin: 0;
+      font-size: 24px;
+    }
       margin: 0 0 8px;
       font-size: 24px;
     }
@@ -321,16 +330,7 @@
     }
 
     .tag {
-      display: inline-flex;
-      margin-top: 12px;
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: white;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 999px;
-      padding: 8px 10px;
-      background: rgba(255,255,255,.04);
+      display: none;
     }
 
     .banana {
@@ -440,6 +440,20 @@
       text-transform: uppercase;
     }
 
+    .footer-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-flag {
+      width: 22px;
+      height: auto;
+      border-radius: 3px;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
     @media (max-width: 1100px) {
       .ranked-wrap { grid-template-columns: repeat(3, minmax(180px, 1fr)); }
       .hero-grid, .banana-card { grid-template-columns: 1fr; }
@@ -483,11 +497,6 @@
           <p>
             Budoseiken creates fightwear built with identity, attitude, and purpose. Our newest drop puts the Rooster Rashguard front and center — bold graphics, clean contrast, and green energy inspired by the design itself.
           </p>
-          <div class="hero-stats">
-            <div class="stat"><strong>Destined for Greatness</strong><span>Official slogan</span></div>
-            <div class="stat"><strong>Budoseiken.com</strong><span>Brand home</span></div>
-            <div class="stat"><strong>Launching soon</strong><span>Product listing phase</span></div>
-          </div>
           <div class="actions">
             <a class="btn btn-primary" href="#ranked">Explore collection</a>
             <a class="btn btn-secondary" href="#about">About Budoseiken</a>
@@ -508,7 +517,7 @@
             <h2 class="tilt">Belt Colors. Same Standard.</h2>
           </div>
           <p>
-            Hover each rashguard to switch from front to back view. The sequence below follows your requested order and keeps the ranked collection as the only multi-card product showcase area.
+            Hover each rashguard to switch from front to back view.
           </p>
         </div>
 
@@ -520,8 +529,7 @@
             </div>
             <div class="product-body">
               <h3 class="tilt">White Ranked</h3>
-              <p>Clean contrast, sharp identity, and a competition-ready presence.</p>
-              <span class="tag">Hover for back view</span>
+              
             </div>
           </article>
 
@@ -532,8 +540,7 @@
             </div>
             <div class="product-body">
               <h3 class="tilt">Blue Ranked</h3>
-              <p>Electric blue accents that keep the Budoseiken attitude unmistakable.</p>
-              <span class="tag">Hover for back view</span>
+              
             </div>
           </article>
 
@@ -544,8 +551,7 @@
             </div>
             <div class="product-body">
               <h3 class="tilt">Purple Ranked</h3>
-              <p>Deep purple tone with a strong visual balance between form and impact.</p>
-              <span class="tag">Hover for back view</span>
+              
             </div>
           </article>
 
@@ -556,8 +562,7 @@
             </div>
             <div class="product-body">
               <h3 class="tilt">Brown Ranked</h3>
-              <p>Earth tone energy for athletes who want something bold without noise.</p>
-              <span class="tag">Hover for back view</span>
+              
             </div>
           </article>
 
@@ -568,8 +573,7 @@
             </div>
             <div class="product-body">
               <h3 class="tilt">Black Ranked</h3>
-              <p>Minimal, aggressive, and built to feel like the flagship ranked option.</p>
-              <span class="tag">Hover for back view</span>
+              
             </div>
           </article>
         </div>
@@ -603,26 +607,8 @@
             <h2 class="tilt">Costa Rica Built. Fightwear Driven.</h2>
           </div>
           <p>
-            Budoseiken is a Costa Rican fightwear brand founded in 2021, shaped by discipline, symbolism, and modern combat style. This first website direction is focused on showcasing the products before sales officially begin.
+            Budoseiken is a Costa Rican fightwear brand founded in 2021, shaped by discipline, symbolism, and modern combat style.
           </p>
-        </div>
-
-        <div class="highlight-grid">
-          <article class="card highlight-card">
-            <span class="eyebrow">Mission</span>
-            <h3 class="tilt">Destined for Greatness</h3>
-            <p>The slogan leads the visual direction of the brand and gives every product page a stronger identity.</p>
-          </article>
-          <article class="card highlight-card">
-            <span class="eyebrow">Aesthetic</span>
-            <h3 class="tilt">Black, White, Light Blue</h3>
-            <p>The base palette stays loyal to the brand while allowing special sections like the Rooster to introduce accent colors.</p>
-          </article>
-          <article class="card highlight-card">
-            <span class="eyebrow">Phase one</span>
-            <h3 class="tilt">Showcase First</h3>
-            <p>The website is built to present the collection clearly now, and later evolve into a full e-commerce experience.</p>
-          </article>
         </div>
       </div>
     </section>
@@ -673,7 +659,7 @@
           <img class="logo-mark" src="assets/BlackSwordCyanFistNoBG.png" alt="Budoseiken logo">
           <img class="logo-word" src="assets/DestinedForGreatnessBlack.png" alt="Destined for Greatness wordmark">
         </div>
-        <div class="mini">Budoseiken · Costa Rica · Founded 2021</div>
+        <div class="mini footer-meta"><img class="footer-flag" src="https://flagcdn.com/w40/cr.png" alt="Costa Rica flag"><span>Budoseiken · Costa Rica · Founded 2021</span></div>
       </div>
       <div class="mini">budoseiken.com · Destined for Greatness</div>
     </div>
