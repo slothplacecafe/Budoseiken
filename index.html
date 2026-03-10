@@ -283,7 +283,9 @@
       display: grid;
       place-items: center;
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,248,248,.98));
+      background: #ffffff;
+      background-image: none;
+      box-shadow: none;
     }
 
     .product-image img {
@@ -372,6 +374,8 @@
 
     .banana-gallery .shot {
       background: #ffffff;
+      background-image: none;
+      box-shadow: none;
       border: 1px solid rgba(255,255,255,.08);
       border-radius: 20px;
       padding: 18px;
@@ -401,26 +405,35 @@
 
     .gear-grid {
       grid-template-columns: repeat(2, 1fr);
+      align-items: stretch;
     }
 
     .gear-card {
       padding: 18px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .gear-card .gallery {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 12px;
       margin-bottom: 16px;
+      flex: 1;
+      align-items: stretch;
     }
 
     .gear-card .gallery img,
     .gear-card .placeholder,
     .hover-swap {
-      width: 100%;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: #ffffff;
+      position: relative;
+      min-height: 380px;
+      height: 380px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: 18px;
     }
 
     .gear-card .placeholder {
@@ -444,15 +457,28 @@
 
     .hover-swap img {
       width: 100%;
-      max-height: 260px;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
       transition: opacity .28s ease, transform .32s ease;
-      filter: drop-shadow(0 16px 30px rgba(0,0,0,.18));
+      filter: none;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .hover-swap .swap-front,
+    .hover-swap .swap-back {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: calc(100% - 36px);
+      height: calc(100% - 36px);
+      transform: translate(-50%, -50%);
+      display: grid;
+      place-items: center;
     }
 
     .hover-swap .swap-back {
-      position: absolute;
-      inset: 18px;
       opacity: 0;
       pointer-events: none;
     }
@@ -563,9 +589,7 @@
             <span class="eyebrow">Ranked collection</span>
             <h2 class="tilt">Belt Colors. Same Standard.</h2>
           </div>
-          <p>
-            Hover each rashguard to switch from front to back view.
-          </p>
+          <p></p>
         </div>
 
         <div class="ranked-wrap">
@@ -682,7 +706,7 @@
             </div>
             <div class="product-body" style="padding:0;">
               <h3 class="tilt">Budoseiken Bag</h3>
-              <p>A clean accessory section featuring your current duffel bag visuals with room for future product details, materials, or preorder notes.</p>
+              <p></p>
             </div>
           </article>
 
@@ -695,7 +719,7 @@
             </div>
             <div class="product-body" style="padding:0;">
               <h3 class="tilt">Budoseiken Gloves</h3>
-              <p>Clean fight gear details with a second hover view for the gloves.</p>
+              <p></p>
             </div>
           </article>
         </div>
