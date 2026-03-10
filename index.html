@@ -421,35 +421,35 @@
       gap: 12px;
       margin-bottom: 16px;
       flex: 1;
-      align-items: stretch;
+      align-items: center;
+      justify-items: center;
     }
 
     .gear-card .gallery img,
     .gear-card .placeholder,
     .hover-swap {
       position: relative;
-      min-height: 380px;
-      height: 380px;
+      width: min(100%, 420px);
+      min-height: 320px;
+      height: 320px;
       overflow: hidden;
       display: grid;
       place-items: center;
-      padding: 18px;
+      padding: 0;
       background: #ffffff;
+      margin: 0 auto;
     }
 
     .hover-swap .swap-front,
     .hover-swap .swap-back {
       position: absolute;
-      top: 18px;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      width: auto;
-      height: auto;
+      inset: 20px;
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
       object-fit: contain;
       transition: opacity .28s ease, transform .32s ease;
       display: block;
-      margin: auto;
+      z-index: 1;
     }
 
     .hover-swap .swap-front {
